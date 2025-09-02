@@ -24,6 +24,8 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'test_collision = py_test.test_collision:main',],
+            'test_collision = py_test.test_collision:main',
+            'test_collision_rviz2 = py_test.test_collision_rviz2:main',],
+            
     },
 )

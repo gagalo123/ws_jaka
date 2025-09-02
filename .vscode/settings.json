@@ -1,0 +1,8 @@
+{
+    "clang-format.executable": "/usr/bin/clang-format",
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "xaver.clang-format",
+    "files.associations": {
+        "ostream": "cpp"
+    }
+}

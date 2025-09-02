@@ -1,7 +1,9 @@
+#include "pinocchio/parsers/srdf.hpp"
+#include "pinocchio/parsers/urdf.hpp"
+
+#include "pinocchio/algorithm/geometry.hpp"
 #include "pinocchio/algorithm/joint-configuration.hpp"
-#include "pinocchio/algorithm/rnea.hpp"
-#include "pinocchio/multibody/sample-models.hpp"
-#include <condition_variable>
+#include "pinocchio/collision/collision.hpp"
 #include <iostream>
 #include <mutex>
 #include <rclcpp/rclcpp.hpp>
@@ -48,6 +50,7 @@ private:
   }
 };
 std::mutex mutex_urdf_loaded;
+using namespace pinocchio;
 int main(int argc, char *argv[]) {
   rclcpp::init(argc, argv);
   auto node = std::make_shared<Test_Collision_Rviz2>();
@@ -56,6 +59,13 @@ int main(int argc, char *argv[]) {
   std::string urdf_string = node->get_urdf_string();
   RCLCPP_INFO(rclcpp::get_logger("test_collision_rviz2"),
               "URDF 字符串长度: %zu", urdf_string.size());
+
+  Model model;
+
+  pinocchio::urdf::buildModelFromXML(urdf_string, model);
+  RCLCPP_INFO(rclcpp::get_logger("test_collision_rviz2"),
+              "模型加载完成，关节数: %d", model.njoints);
+
   // rclcpp::executors::MultiThreadedExecutor
   // executor(rclcpp::ExecutorOptions(),
   //                                                   4); // 4个线程

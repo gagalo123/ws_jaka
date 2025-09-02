@@ -7,8 +7,10 @@
 #include <iostream>
 #include <mutex>
 #include <rclcpp/rclcpp.hpp>
+#include <sensor_msgs/msg/joint_state.hpp>
 #include <std_msgs/msg/string.hpp>
 #include <thread>
+using namespace pinocchio;
 class Test_Collision_Rviz2 : public rclcpp::Node {
 public:
   Test_Collision_Rviz2() : Node("test_collision_rviz2") {
@@ -17,6 +19,8 @@ public:
         "/robot_description", 10,
         std::bind(&Test_Collision_Rviz2::urdf_callback, this,
                   std::placeholders::_1));
+    joint_state_pub_ = this->create_publisher<sensor_msgs::msg::JointState>(
+        "/joint_states", 10);
     RCLCPP_INFO(this->get_logger(), "Test_Collision_Rviz2_Node 节点已启动。");
     // while (!urdf_loaded_) {
     //   RCLCPP_INFO(this->get_logger(), "等待 URDF 数据...");
@@ -28,6 +32,20 @@ public:
                                        promise_.get_future());
   }
   std::string get_urdf_string() const { return urdf_string_; }
+  void publish_joint_states(const Model &model) {
+    auto msg = std::make_shared<sensor_msgs::msg::JointState>();
+    auto q0 = pinocchio::randomConfiguration(model);
+    std::cout << "model.names.size()=" << model.names.size() << std::endl;
+    std::cout << "q0.size()=" << q0.size() << std::endl;
+    msg->header.stamp = this->now();
+    msg->name = model.names;
+    msg->name.erase(msg->name.begin()); // 移除第一个元素 "UNNAMED"
+    msg->position.resize(msg->name.size(), 0.0);
+    for (int i = 0; i < (int)msg->name.size(); ++i) {
+      msg->position[i] = q0[i];
+    }
+    joint_state_pub_->publish(*msg);
+  }
 
 private:
   std::promise<void> promise_;
@@ -48,15 +66,17 @@ private:
     RCLCPP_INFO(this->get_logger(), "URDF 解析完成。");
     // 取消订阅，避免重复处理
   }
+  rclcpp::Publisher<sensor_msgs::msg::JointState>::SharedPtr joint_state_pub_;
 };
 std::mutex mutex_urdf_loaded;
-using namespace pinocchio;
+
 int main(int argc, char *argv[]) {
   rclcpp::init(argc, argv);
   auto node = std::make_shared<Test_Collision_Rviz2>();
 
   node->wait_for_urdf();
   std::string urdf_string = node->get_urdf_string();
+  std::istringstream urdf_stream(urdf_string);
   RCLCPP_INFO(rclcpp::get_logger("test_collision_rviz2"),
               "URDF 字符串长度: %zu", urdf_string.size());
 
@@ -65,7 +85,54 @@ int main(int argc, char *argv[]) {
   pinocchio::urdf::buildModelFromXML(urdf_string, model);
   RCLCPP_INFO(rclcpp::get_logger("test_collision_rviz2"),
               "模型加载完成，关节数: %d", model.njoints);
+  // for (auto &joint : model.joints) {
+  //   std::cout << "Joint Name: " << joint << ", Type: " << joint.shortname()
+  //             << std::endl;
+  // }
 
+  Data data(model);
+  for (JointIndex joint_id = 0; joint_id < (JointIndex)model.njoints;
+       ++joint_id)
+    std::cout << std::left << std::setw(12) << joint_id << std::setw(24)
+              << model.names[joint_id] << ": " << std::fixed
+              << std::setprecision(2)
+              << data.oMi[joint_id].translation().transpose() << std::endl;
+
+  GeometryModel geom_model;
+  pinocchio::urdf::buildGeom(model, urdf_stream, pinocchio::COLLISION,
+                             geom_model);
+
+  geom_model.addAllCollisionPairs();
+  geom_model.removeCollisionPair(CollisionPair(7, 8));
+  geom_model.removeCollisionPair(CollisionPair(15, 16));
+  GeometryData geom_data(geom_model);
+
+  auto q0 = pinocchio::neutral(model);
+  pinocchio::forwardKinematics(model, data, q0);
+  pinocchio::updateGeometryPlacements(model, data, geom_model, geom_data);
+  pinocchio::computeCollisions(geom_model, geom_data);
+
+  for (int T = 0; T < 100; T) {
+    q0 = pinocchio::randomConfiguration(model);
+    pinocchio::forwardKinematics(model, data, q0);
+    pinocchio::updateGeometryPlacements(model, data, geom_model, geom_data);
+    pinocchio::computeCollisions(geom_model, geom_data);
+
+    node->publish_joint_states(model);
+    // std::cout << "Step " << T << ":\n";
+    for (size_t k = 0; k < geom_model.collisionPairs.size(); ++k) {
+      const CollisionPair &cp = geom_model.collisionPairs[k];
+      const hpp::fcl::CollisionResult &cr = geom_data.collisionResults[k];
+      if (cr.isCollision()) {
+        // std::cout << "  Collision detected between objects "
+        //           << geom_model.geometryObjects[cp.first].name << " and "
+        //           << geom_model.geometryObjects[cp.second].name << std::endl;
+        // std::cout << "Press Enter to continue...";
+        // std::cin.get(); // 等待用户按下 Enter
+      }
+    }
+    rclcpp::spin_some(node);
+  }
   // rclcpp::executors::MultiThreadedExecutor
   // executor(rclcpp::ExecutorOptions(),
   //                                                   4); // 4个线程

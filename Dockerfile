@@ -31,6 +31,17 @@ RUN mkdir -p /usr/share/keyrings \
     python3-argcomplete \
  && rm -rf /var/lib/apt/lists/*
 
+RUN sudo apt update \
+   && apt install -y ros-humble-moveit lsb-release gnupg git ros-humble-moveit-visual-tools
+
+RUN sudo curl https://packages.osrfoundation.org/gazebo.gpg --output /usr/share/keyrings/pkgs-osrf-archive-keyring.gpg \
+   && echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/pkgs-osrf-archive-keyring.gpg] \
+   http://packages.osrfoundation.org/gazebo/ubuntu-stable $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/gazebo-stable.list > /dev/null \
+   && sudo apt-get update \
+   && sudo apt-get -y install ignition-fortress ros-humble-ros-gz python-is-python3 python3-pip  ros-humble-ros2-control ros-humble-ros2-controllers ros-humble-ign-ros2-control ros-humble-ign-ros2-control-demos python3-catkin-pkg
+
+
+
 # 初始化 rosdep
 RUN rosdep init || true
 RUN rosdep update || true
@@ -69,18 +80,9 @@ RUN conda create -y -n humble python=3.10.13 \
    && conda run -n humble conda install -y pinocchio casadi
 RUN conda run -n humble pip config set global.index-url https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple \
    && conda run -n humble pip install "fastapi[standard]" \
-   && conda run -n humble pip install meshcat catkin_pkg empy==3.3.4 lark-parser matplotlib
+   && conda run -n humble pip install meshcat catkin_pkg empy==3.3.4 lark-parser matplotlib \
+   && pip install yapf
 
-
-RUN sudo apt update \
-   && apt install -y ros-humble-moveit lsb-release gnupg git ros-humble-moveit-visual-tools
-
-RUN sudo curl https://packages.osrfoundation.org/gazebo.gpg --output /usr/share/keyrings/pkgs-osrf-archive-keyring.gpg \
-   && echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/pkgs-osrf-archive-keyring.gpg] \
-   http://packages.osrfoundation.org/gazebo/ubuntu-stable $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/gazebo-stable.list > /dev/null \
-   && sudo apt-get update \
-   && sudo apt-get -y install ignition-fortress ros-humble-ros-gz python-is-python3 python3-pip  ros-humble-ros2-control ros-humble-ros2-controllers ros-humble-ign-ros2-control ros-humble-ign-ros2-control-demos
-RUN pip install yapf
 
 
 
@@ -117,7 +119,6 @@ RUN echo "# >>> conda initialize >>>" >> /root/.bashrc \
  && echo "conda deactivate" >> /root/.bashrc
 
 
-RUN echo "source /opt/ros/humble/setup.bash" >> /root/.bashrc \
- && echo "export PATH=/usr/bin:$PATH" >> /root/.bashrc
+RUN echo "source /opt/ros/humble/setup.bash" >> /root/.bashrc
 
 CMD ["/bin/bash", "-l"]

@@ -30,7 +30,13 @@ def generate_launch_description():
                                 #  '--interp-steps', '20',
                                 #  '--ros-args', '--log-level', 'DEBUG'  # Set logging verbosity to DEBUG
                                  ])
+    rviz2_node = Node(package='rviz2',
+                    executable='rviz2',
+                    name='rviz2',
+                    output='screen',
+                    arguments=['-d', rviz2_config_path])
     return LaunchDescription([
+        rviz2_node,
         robot_state_publisher_node,
         test_cllision_rviz2_node
         # Start rviz with the provided configuration file

@@ -16,6 +16,7 @@ ros2 launch jaka_<robot_model>_moveit_config demo.launch.py use_sim:=true
 # container run
 ```bash
 xhost +local:docker
+xhost +local:root
 
 
 docker run -it --rm --gpus all --network host --ipc host -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix:rw -v /dev/dri:/dev/dri --name jaka jaka:ubuntu22.04
@@ -25,11 +26,15 @@ docker run -dit  \
   --network host \
   --ipc host \
   -e DISPLAY=$DISPLAY \
-  -v /tmp/.X11-unix:/tmp/.X11-unix:rw \
+  -e NVIDIA_DRIVER_CAPABILITIES=all \
+  -v /tmp/.X11-unix:/tmp/.X11-unix  \
   -v /dev/dri:/dev/dri \
+  -v /usr/lib/nvidia:/usr/lib/nvidia:ro \
   -v /home/mofang:/home/mofang \
   --name jaka \
   jaka:ubuntu22.04
+```
+```bash
 
 ```
 ## jaka

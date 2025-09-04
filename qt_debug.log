@@ -1,0 +1,362 @@
+[INFO] [launch]: All log files can be found below /root/.ros/log/2025-09-04-09-27-22-596096-mofang-LEGION-REN7000K-26IRX-65989
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [moveit_setup_assistant-1]: process started with pid [65991]
+[moveit_setup_assistant-1] QFactoryLoader::QFactoryLoader() checking directory path "/usr/lib/x86_64-linux-gnu/qt5/plugins/platforms" ...
+[moveit_setup_assistant-1] QFactoryLoader::QFactoryLoader() looking at "/usr/lib/x86_64-linux-gnu/qt5/plugins/platforms/libqeglfs.so"
+[moveit_setup_assistant-1] Found metadata in lib /usr/lib/x86_64-linux-gnu/qt5/plugins/platforms/libqeglfs.so, metadata=
+[moveit_setup_assistant-1] {
+[moveit_setup_assistant-1]     "IID": "org.qt-project.Qt.QPA.QPlatformIntegrationFactoryInterface.5.3",
+[moveit_setup_assistant-1]     "MetaData": {
+[moveit_setup_assistant-1]         "Keys": [
+[moveit_setup_assistant-1]             "eglfs"
+[moveit_setup_assistant-1]         ]
+[moveit_setup_assistant-1]     },
+[moveit_setup_assistant-1]     "archreq": 0,
+[moveit_setup_assistant-1]     "className": "QEglFSIntegrationPlugin",
+[moveit_setup_assistant-1]     "debug": false,
+[moveit_setup_assistant-1]     "version": 331520
+[moveit_setup_assistant-1] }
+[moveit_setup_assistant-1] 
+[moveit_setup_assistant-1] 
+[moveit_setup_assistant-1] Got keys from plugin meta data ("eglfs")
+[moveit_setup_assistant-1] QFactoryLoader::QFactoryLoader() looking at "/usr/lib/x86_64-linux-gnu/qt5/plugins/platforms/libqlinuxfb.so"
+[moveit_setup_assistant-1] Found metadata in lib /usr/lib/x86_64-linux-gnu/qt5/plugins/platforms/libqlinuxfb.so, metadata=
+[moveit_setup_assistant-1] {
+[moveit_setup_assistant-1]     "IID": "org.qt-project.Qt.QPA.QPlatformIntegrationFactoryInterface.5.3",
+[moveit_setup_assistant-1]     "MetaData": {
+[moveit_setup_assistant-1]         "Keys": [
+[moveit_setup_assistant-1]             "linuxfb"
+[moveit_setup_assistant-1]         ]
+[moveit_setup_assistant-1]     },
+[moveit_setup_assistant-1]     "archreq": 0,
+[moveit_setup_assistant-1]     "className": "QLinuxFbIntegrationPlugin",
+[moveit_setup_assistant-1]     "debug": false,
+[moveit_setup_assistant-1]     "version": 331520
+[moveit_setup_assistant-1] }
+[moveit_setup_assistant-1] 
+[moveit_setup_assistant-1] 
+[moveit_setup_assistant-1] Got keys from plugin meta data ("linuxfb")
+[moveit_setup_assistant-1] QFactoryLoader::QFactoryLoader() looking at "/usr/lib/x86_64-linux-gnu/qt5/plugins/platforms/libqminimal.so"
+[moveit_setup_assistant-1] Found metadata in lib /usr/lib/x86_64-linux-gnu/qt5/plugins/platforms/libqminimal.so, metadata=
+[moveit_setup_assistant-1] {
+[moveit_setup_assistant-1]     "IID": "org.qt-project.Qt.QPA.QPlatformIntegrationFactoryInterface.5.3",
+[moveit_setup_assistant-1]     "MetaData": {
+[moveit_setup_assistant-1]         "Keys": [
+[moveit_setup_assistant-1]             "minimal"
+[moveit_setup_assistant-1]         ]
+[moveit_setup_assistant-1]     },
+[moveit_setup_assistant-1]     "archreq": 0,
+[moveit_setup_assistant-1]     "className": "QMinimalIntegrationPlugin",
+[moveit_setup_assistant-1]     "debug": false,
+[moveit_setup_assistant-1]     "version": 331520
+[moveit_setup_assistant-1] }
+[moveit_setup_assistant-1] 
+[moveit_setup_assistant-1] 
+[moveit_setup_assistant-1] Got keys from plugin meta data ("minimal")
+[moveit_setup_assistant-1] QFactoryLoader::QFactoryLoader() looking at "/usr/lib/x86_64-linux-gnu/qt5/plugins/platforms/libqminimalegl.so"
+[moveit_setup_assistant-1] Found metadata in lib /usr/lib/x86_64-linux-gnu/qt5/plugins/platforms/libqminimalegl.so, metadata=
+[moveit_setup_assistant-1] {
+[moveit_setup_assistant-1]     "IID": "org.qt-project.Qt.QPA.QPlatformIntegrationFactoryInterface.5.3",
+[moveit_setup_assistant-1]     "MetaData": {
+[moveit_setup_assistant-1]         "Keys": [
+[moveit_setup_assistant-1]             "minimalegl"
+[moveit_setup_assistant-1]         ]
+[moveit_setup_assistant-1]     },
+[moveit_setup_assistant-1]     "archreq": 0,
+[moveit_setup_assistant-1]     "className": "QMinimalEglIntegrationPlugin",
+[moveit_setup_assistant-1]     "debug": false,
+[moveit_setup_assistant-1]     "version": 331520
+[moveit_setup_assistant-1] }
+[moveit_setup_assistant-1] 
+[moveit_setup_assistant-1] 
+[moveit_setup_assistant-1] Got keys from plugin meta data ("minimalegl")
+[moveit_setup_assistant-1] QFactoryLoader::QFactoryLoader() looking at "/usr/lib/x86_64-linux-gnu/qt5/plugins/platforms/libqoffscreen.so"
+[moveit_setup_assistant-1] Found metadata in lib /usr/lib/x86_64-linux-gnu/qt5/plugins/platforms/libqoffscreen.so, metadata=
+[moveit_setup_assistant-1] {
+[moveit_setup_assistant-1]     "IID": "org.qt-project.Qt.QPA.QPlatformIntegrationFactoryInterface.5.3",
+[moveit_setup_assistant-1]     "MetaData": {
+[moveit_setup_assistant-1]         "Keys": [
+[moveit_setup_assistant-1]             "offscreen"
+[moveit_setup_assistant-1]         ]
+[moveit_setup_assistant-1]     },
+[moveit_setup_assistant-1]     "archreq": 0,
+[moveit_setup_assistant-1]     "className": "QOffscreenIntegrationPlugin",
+[moveit_setup_assistant-1]     "debug": false,
+[moveit_setup_assistant-1]     "version": 331520
+[moveit_setup_assistant-1] }
+[moveit_setup_assistant-1] 
+[moveit_setup_assistant-1] 
+[moveit_setup_assistant-1] Got keys from plugin meta data ("offscreen")
+[moveit_setup_assistant-1] QFactoryLoader::QFactoryLoader() looking at "/usr/lib/x86_64-linux-gnu/qt5/plugins/platforms/libqvnc.so"
+[moveit_setup_assistant-1] Found metadata in lib /usr/lib/x86_64-linux-gnu/qt5/plugins/platforms/libqvnc.so, metadata=
+[moveit_setup_assistant-1] {
+[moveit_setup_assistant-1]     "IID": "org.qt-project.Qt.QPA.QPlatformIntegrationFactoryInterface.5.3",
+[moveit_setup_assistant-1]     "MetaData": {
+[moveit_setup_assistant-1]         "Keys": [
+[moveit_setup_assistant-1]             "vnc"
+[moveit_setup_assistant-1]         ]
+[moveit_setup_assistant-1]     },
+[moveit_setup_assistant-1]     "archreq": 0,
+[moveit_setup_assistant-1]     "className": "QVncIntegrationPlugin",
+[moveit_setup_assistant-1]     "debug": false,
+[moveit_setup_assistant-1]     "version": 331520
+[moveit_setup_assistant-1] }
+[moveit_setup_assistant-1] 
+[moveit_setup_assistant-1] 
+[moveit_setup_assistant-1] Got keys from plugin meta data ("vnc")
+[moveit_setup_assistant-1] QFactoryLoader::QFactoryLoader() looking at "/usr/lib/x86_64-linux-gnu/qt5/plugins/platforms/libqxcb.so"
+[moveit_setup_assistant-1] Found metadata in lib /usr/lib/x86_64-linux-gnu/qt5/plugins/platforms/libqxcb.so, metadata=
+[moveit_setup_assistant-1] {
+[moveit_setup_assistant-1]     "IID": "org.qt-project.Qt.QPA.QPlatformIntegrationFactoryInterface.5.3",
+[moveit_setup_assistant-1]     "MetaData": {
+[moveit_setup_assistant-1]         "Keys": [
+[moveit_setup_assistant-1]             "xcb"
+[moveit_setup_assistant-1]         ]
+[moveit_setup_assistant-1]     },
+[moveit_setup_assistant-1]     "archreq": 0,
+[moveit_setup_assistant-1]     "className": "QXcbIntegrationPlugin",
+[moveit_setup_assistant-1]     "debug": false,
+[moveit_setup_assistant-1]     "version": 331520
+[moveit_setup_assistant-1] }
+[moveit_setup_assistant-1] 
+[moveit_setup_assistant-1] 
+[moveit_setup_assistant-1] Got keys from plugin meta data ("xcb")
+[moveit_setup_assistant-1] QFactoryLoader::QFactoryLoader() checking directory path "/opt/ros/humble/lib/moveit_setup_assistant/platforms" ...
+[moveit_setup_assistant-1] loaded library "/usr/lib/x86_64-linux-gnu/qt5/plugins/platforms/libqxcb.so"
+[moveit_setup_assistant-1] loaded library "Xcursor"
+[moveit_setup_assistant-1] QStandardPaths: XDG_RUNTIME_DIR not set, defaulting to '/tmp/runtime-root'
+[moveit_setup_assistant-1] QFactoryLoader::QFactoryLoader() checking directory path "/usr/lib/x86_64-linux-gnu/qt5/plugins/platformthemes" ...
+[moveit_setup_assistant-1] QFactoryLoader::QFactoryLoader() checking directory path "/opt/ros/humble/lib/moveit_setup_assistant/platformthemes" ...
+[moveit_setup_assistant-1] QFactoryLoader::QFactoryLoader() checking directory path "/usr/lib/x86_64-linux-gnu/qt5/plugins/platforminputcontexts" ...
+[moveit_setup_assistant-1] QFactoryLoader::QFactoryLoader() looking at "/usr/lib/x86_64-linux-gnu/qt5/plugins/platforminputcontexts/libcomposeplatforminputcontextplugin.so"
+[moveit_setup_assistant-1] Found metadata in lib /usr/lib/x86_64-linux-gnu/qt5/plugins/platforminputcontexts/libcomposeplatforminputcontextplugin.so, metadata=
+[moveit_setup_assistant-1] {
+[moveit_setup_assistant-1]     "IID": "org.qt-project.Qt.QPlatformInputContextFactoryInterface.5.1",
+[moveit_setup_assistant-1]     "MetaData": {
+[moveit_setup_assistant-1]         "Keys": [
+[moveit_setup_assistant-1]             "compose",
+[moveit_setup_assistant-1]             "xim"
+[moveit_setup_assistant-1]         ]
+[moveit_setup_assistant-1]     },
+[moveit_setup_assistant-1]     "archreq": 0,
+[moveit_setup_assistant-1]     "className": "QComposePlatformInputContextPlugin",
+[moveit_setup_assistant-1]     "debug": false,
+[moveit_setup_assistant-1]     "version": 331520
+[moveit_setup_assistant-1] }
+[moveit_setup_assistant-1] 
+[moveit_setup_assistant-1] 
+[moveit_setup_assistant-1] Got keys from plugin meta data ("compose", "xim")
+[moveit_setup_assistant-1] QFactoryLoader::QFactoryLoader() looking at "/usr/lib/x86_64-linux-gnu/qt5/plugins/platforminputcontexts/libibusplatforminputcontextplugin.so"
+[moveit_setup_assistant-1] Found metadata in lib /usr/lib/x86_64-linux-gnu/qt5/plugins/platforminputcontexts/libibusplatforminputcontextplugin.so, metadata=
+[moveit_setup_assistant-1] {
+[moveit_setup_assistant-1]     "IID": "org.qt-project.Qt.QPlatformInputContextFactoryInterface.5.1",
+[moveit_setup_assistant-1]     "MetaData": {
+[moveit_setup_assistant-1]         "Keys": [
+[moveit_setup_assistant-1]             "ibus"
+[moveit_setup_assistant-1]         ]
+[moveit_setup_assistant-1]     },
+[moveit_setup_assistant-1]     "archreq": 0,
+[moveit_setup_assistant-1]     "className": "QIbusPlatformInputContextPlugin",
+[moveit_setup_assistant-1]     "debug": false,
+[moveit_setup_assistant-1]     "version": 331520
+[moveit_setup_assistant-1] }
+[moveit_setup_assistant-1] 
+[moveit_setup_assistant-1] 
+[moveit_setup_assistant-1] Got keys from plugin meta data ("ibus")
+[moveit_setup_assistant-1] QFactoryLoader::QFactoryLoader() checking directory path "/opt/ros/humble/lib/moveit_setup_assistant/platforminputcontexts" ...
+[moveit_setup_assistant-1] loaded library "/usr/lib/x86_64-linux-gnu/qt5/plugins/platforminputcontexts/libcomposeplatforminputcontextplugin.so"
+[moveit_setup_assistant-1] QFactoryLoader::QFactoryLoader() checking directory path "/usr/lib/x86_64-linux-gnu/qt5/plugins/styles" ...
+[moveit_setup_assistant-1] QFactoryLoader::QFactoryLoader() checking directory path "/opt/ros/humble/lib/moveit_setup_assistant/styles" ...
+[moveit_setup_assistant-1] QFactoryLoader::QFactoryLoader() checking directory path "/usr/lib/x86_64-linux-gnu/qt5/plugins/iconengines" ...
+[moveit_setup_assistant-1] QFactoryLoader::QFactoryLoader() looking at "/usr/lib/x86_64-linux-gnu/qt5/plugins/iconengines/libqsvgicon.so"
+[moveit_setup_assistant-1] Found metadata in lib /usr/lib/x86_64-linux-gnu/qt5/plugins/iconengines/libqsvgicon.so, metadata=
+[moveit_setup_assistant-1] {
+[moveit_setup_assistant-1]     "IID": "org.qt-project.Qt.QIconEngineFactoryInterface",
+[moveit_setup_assistant-1]     "MetaData": {
+[moveit_setup_assistant-1]         "Keys": [
+[moveit_setup_assistant-1]             "svg",
+[moveit_setup_assistant-1]             "svgz",
+[moveit_setup_assistant-1]             "svg.gz"
+[moveit_setup_assistant-1]         ]
+[moveit_setup_assistant-1]     },
+[moveit_setup_assistant-1]     "archreq": 0,
+[moveit_setup_assistant-1]     "className": "QSvgIconPlugin",
+[moveit_setup_assistant-1]     "debug": false,
+[moveit_setup_assistant-1]     "version": 331520
+[moveit_setup_assistant-1] }
+[moveit_setup_assistant-1] 
+[moveit_setup_assistant-1] 
+[moveit_setup_assistant-1] Got keys from plugin meta data ("svg", "svgz", "svg.gz")
+[moveit_setup_assistant-1] QFactoryLoader::QFactoryLoader() checking directory path "/opt/ros/humble/lib/moveit_setup_assistant/iconengines" ...
+[moveit_setup_assistant-1] QFactoryLoader::QFactoryLoader() checking directory path "/usr/lib/x86_64-linux-gnu/qt5/plugins/imageformats" ...
+[moveit_setup_assistant-1] QFactoryLoader::QFactoryLoader() looking at "/usr/lib/x86_64-linux-gnu/qt5/plugins/imageformats/libqgif.so"
+[moveit_setup_assistant-1] Found metadata in lib /usr/lib/x86_64-linux-gnu/qt5/plugins/imageformats/libqgif.so, metadata=
+[moveit_setup_assistant-1] {
+[moveit_setup_assistant-1]     "IID": "org.qt-project.Qt.QImageIOHandlerFactoryInterface",
+[moveit_setup_assistant-1]     "MetaData": {
+[moveit_setup_assistant-1]         "Keys": [
+[moveit_setup_assistant-1]             "gif"
+[moveit_setup_assistant-1]         ],
+[moveit_setup_assistant-1]         "MimeTypes": [
+[moveit_setup_assistant-1]             "image/gif"
+[moveit_setup_assistant-1]         ]
+[moveit_setup_assistant-1]     },
+[moveit_setup_assistant-1]     "archreq": 0,
+[moveit_setup_assistant-1]     "className": "QGifPlugin",
+[moveit_setup_assistant-1]     "debug": false,
+[moveit_setup_assistant-1]     "version": 331520
+[moveit_setup_assistant-1] }
+[moveit_setup_assistant-1] 
+[moveit_setup_assistant-1] 
+[moveit_setup_assistant-1] Got keys from plugin meta data ("gif")
+[moveit_setup_assistant-1] QFactoryLoader::QFactoryLoader() looking at "/usr/lib/x86_64-linux-gnu/qt5/plugins/imageformats/libqico.so"
+[moveit_setup_assistant-1] Found metadata in lib /usr/lib/x86_64-linux-gnu/qt5/plugins/imageformats/libqico.so, metadata=
+[moveit_setup_assistant-1] {
+[moveit_setup_assistant-1]     "IID": "org.qt-project.Qt.QImageIOHandlerFactoryInterface",
+[moveit_setup_assistant-1]     "MetaData": {
+[moveit_setup_assistant-1]         "Keys": [
+[moveit_setup_assistant-1]             "ico",
+[moveit_setup_assistant-1]             "cur"
+[moveit_setup_assistant-1]         ],
+[moveit_setup_assistant-1]         "MimeTypes": [
+[moveit_setup_assistant-1]             "image/vnd.microsoft.icon",
+[moveit_setup_assistant-1]             "image/vnd.microsoft.icon"
+[moveit_setup_assistant-1]         ]
+[moveit_setup_assistant-1]     },
+[moveit_setup_assistant-1]     "archreq": 0,
+[moveit_setup_assistant-1]     "className": "QICOPlugin",
+[moveit_setup_assistant-1]     "debug": false,
+[moveit_setup_assistant-1]     "version": 331520
+[moveit_setup_assistant-1] }
+[moveit_setup_assistant-1] 
+[moveit_setup_assistant-1] 
+[moveit_setup_assistant-1] Got keys from plugin meta data ("ico", "cur")
+[moveit_setup_assistant-1] QFactoryLoader::QFactoryLoader() looking at "/usr/lib/x86_64-linux-gnu/qt5/plugins/imageformats/libqjpeg.so"
+[moveit_setup_assistant-1] Found metadata in lib /usr/lib/x86_64-linux-gnu/qt5/plugins/imageformats/libqjpeg.so, metadata=
+[moveit_setup_assistant-1] {
+[moveit_setup_assistant-1]     "IID": "org.qt-project.Qt.QImageIOHandlerFactoryInterface",
+[moveit_setup_assistant-1]     "MetaData": {
+[moveit_setup_assistant-1]         "Keys": [
+[moveit_setup_assistant-1]             "jpg",
+[moveit_setup_assistant-1]             "jpeg"
+[moveit_setup_assistant-1]         ],
+[moveit_setup_assistant-1]         "MimeTypes": [
+[moveit_setup_assistant-1]             "image/jpeg",
+[moveit_setup_assistant-1]             "image/jpeg"
+[moveit_setup_assistant-1]         ]
+[moveit_setup_assistant-1]     },
+[moveit_setup_assistant-1]     "archreq": 0,
+[moveit_setup_assistant-1]     "className": "QJpegPlugin",
+[moveit_setup_assistant-1]     "debug": false,
+[moveit_setup_assistant-1]     "version": 331520
+[moveit_setup_assistant-1] }
+[moveit_setup_assistant-1] 
+[moveit_setup_assistant-1] 
+[moveit_setup_assistant-1] Got keys from plugin meta data ("jpg", "jpeg")
+[moveit_setup_assistant-1] QFactoryLoader::QFactoryLoader() looking at "/usr/lib/x86_64-linux-gnu/qt5/plugins/imageformats/libqsvg.so"
+[moveit_setup_assistant-1] Found metadata in lib /usr/lib/x86_64-linux-gnu/qt5/plugins/imageformats/libqsvg.so, metadata=
+[moveit_setup_assistant-1] {
+[moveit_setup_assistant-1]     "IID": "org.qt-project.Qt.QImageIOHandlerFactoryInterface",
+[moveit_setup_assistant-1]     "MetaData": {
+[moveit_setup_assistant-1]         "Keys": [
+[moveit_setup_assistant-1]             "svg",
+[moveit_setup_assistant-1]             "svgz"
+[moveit_setup_assistant-1]         ],
+[moveit_setup_assistant-1]         "MimeTypes": [
+[moveit_setup_assistant-1]             "image/svg+xml",
+[moveit_setup_assistant-1]             "image/svg+xml-compressed"
+[moveit_setup_assistant-1]         ]
+[moveit_setup_assistant-1]     },
+[moveit_setup_assistant-1]     "archreq": 0,
+[moveit_setup_assistant-1]     "className": "QSvgPlugin",
+[moveit_setup_assistant-1]     "debug": false,
+[moveit_setup_assistant-1]     "version": 331520
+[moveit_setup_assistant-1] }
+[moveit_setup_assistant-1] 
+[moveit_setup_assistant-1] 
+[moveit_setup_assistant-1] Got keys from plugin meta data ("svg", "svgz")
+[moveit_setup_assistant-1] QFactoryLoader::QFactoryLoader() checking directory path "/opt/ros/humble/lib/moveit_setup_assistant/imageformats" ...
+[moveit_setup_assistant-1] loaded library "/usr/lib/x86_64-linux-gnu/qt5/plugins/imageformats/libqgif.so"
+[moveit_setup_assistant-1] loaded library "/usr/lib/x86_64-linux-gnu/qt5/plugins/imageformats/libqico.so"
+[moveit_setup_assistant-1] loaded library "/usr/lib/x86_64-linux-gnu/qt5/plugins/imageformats/libqjpeg.so"
+[moveit_setup_assistant-1] loaded library "/usr/lib/x86_64-linux-gnu/qt5/plugins/imageformats/libqsvg.so"
+[moveit_setup_assistant-1] QFactoryLoader::QFactoryLoader() checking directory path "/usr/lib/x86_64-linux-gnu/qt5/plugins/xcbglintegrations" ...
+[moveit_setup_assistant-1] QFactoryLoader::QFactoryLoader() looking at "/usr/lib/x86_64-linux-gnu/qt5/plugins/xcbglintegrations/libqxcb-egl-integration.so"
+[moveit_setup_assistant-1] Found metadata in lib /usr/lib/x86_64-linux-gnu/qt5/plugins/xcbglintegrations/libqxcb-egl-integration.so, metadata=
+[moveit_setup_assistant-1] {
+[moveit_setup_assistant-1]     "IID": "org.qt-project.Qt.QPA.Xcb.QXcbGlIntegrationFactoryInterface.5.5",
+[moveit_setup_assistant-1]     "MetaData": {
+[moveit_setup_assistant-1]         "Keys": [
+[moveit_setup_assistant-1]             "xcb_egl"
+[moveit_setup_assistant-1]         ]
+[moveit_setup_assistant-1]     },
+[moveit_setup_assistant-1]     "archreq": 0,
+[moveit_setup_assistant-1]     "className": "QXcbEglIntegrationPlugin",
+[moveit_setup_assistant-1]     "debug": false,
+[moveit_setup_assistant-1]     "version": 331520
+[moveit_setup_assistant-1] }
+[moveit_setup_assistant-1] 
+[moveit_setup_assistant-1] 
+[moveit_setup_assistant-1] Got keys from plugin meta data ("xcb_egl")
+[moveit_setup_assistant-1] QFactoryLoader::QFactoryLoader() looking at "/usr/lib/x86_64-linux-gnu/qt5/plugins/xcbglintegrations/libqxcb-glx-integration.so"
+[moveit_setup_assistant-1] Found metadata in lib /usr/lib/x86_64-linux-gnu/qt5/plugins/xcbglintegrations/libqxcb-glx-integration.so, metadata=
+[moveit_setup_assistant-1] {
+[moveit_setup_assistant-1]     "IID": "org.qt-project.Qt.QPA.Xcb.QXcbGlIntegrationFactoryInterface.5.5",
+[moveit_setup_assistant-1]     "MetaData": {
+[moveit_setup_assistant-1]         "Keys": [
+[moveit_setup_assistant-1]             "xcb_glx"
+[moveit_setup_assistant-1]         ]
+[moveit_setup_assistant-1]     },
+[moveit_setup_assistant-1]     "archreq": 0,
+[moveit_setup_assistant-1]     "className": "QXcbGlxIntegrationPlugin",
+[moveit_setup_assistant-1]     "debug": false,
+[moveit_setup_assistant-1]     "version": 331520
+[moveit_setup_assistant-1] }
+[moveit_setup_assistant-1] 
+[moveit_setup_assistant-1] 
+[moveit_setup_assistant-1] Got keys from plugin meta data ("xcb_glx")
+[moveit_setup_assistant-1] QFactoryLoader::QFactoryLoader() checking directory path "/opt/ros/humble/lib/moveit_setup_assistant/xcbglintegrations" ...
+[moveit_setup_assistant-1] loaded library "/usr/lib/x86_64-linux-gnu/qt5/plugins/xcbglintegrations/libqxcb-glx-integration.so"
+[moveit_setup_assistant-1] libGL error: glx: failed to create dri3 screen
+[moveit_setup_assistant-1] libGL error: failed to load driver: nouveau
+[moveit_setup_assistant-1] QFactoryLoader::QFactoryLoader() checking directory path "/usr/lib/x86_64-linux-gnu/qt5/plugins/accessible" ...
+[moveit_setup_assistant-1] QFactoryLoader::QFactoryLoader() checking directory path "/opt/ros/humble/lib/moveit_setup_assistant/accessible" ...
+[moveit_setup_assistant-1] QFactoryLoader::QFactoryLoader() checking directory path "/usr/lib/x86_64-linux-gnu/qt5/plugins/accessiblebridge" ...
+[moveit_setup_assistant-1] QFactoryLoader::QFactoryLoader() checking directory path "/opt/ros/humble/lib/moveit_setup_assistant/accessiblebridge" ...
+[moveit_setup_assistant-1] terminate called after throwing an instance of 'ament_index_cpp::PackageNotFoundError'
+[moveit_setup_assistant-1]   what():  package 'dual_arm' not found, searching: [/opt/ros/humble]
+[moveit_setup_assistant-1] Stack trace (most recent call last):
+[moveit_setup_assistant-1] #31   Object "/usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.15.3", at 0x7f2f51c92e46, in QApplicationPrivate::sendMouseEvent(QWidget*, QMouseEvent*, QWidget*, QWidget*, QWidget**, QPointer<QWidget>&, bool, bool)
+[moveit_setup_assistant-1] #30   Object "/usr/lib/x86_64-linux-gnu/libQt5Core.so.5.15.3", at 0x7f2f5119ce39, in QCoreApplication::notifyInternal2(QObject*, QEvent*)
+[moveit_setup_assistant-1] #29   Object "/usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.15.3", at 0x7f2f51c94363, in QApplication::notify(QObject*, QEvent*)
+[moveit_setup_assistant-1] #28   Object "/usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.15.3", at 0x7f2f51c8c712, in QApplicationPrivate::notify_helper(QObject*, QEvent*)
+[moveit_setup_assistant-1] #27   Object "/usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.15.3", at 0x7f2f51ccf4ed, in QWidget::event(QEvent*)
+[moveit_setup_assistant-1] #26   Object "/usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.15.3", at 0x7f2f51d841e6, in QAbstractButton::mouseReleaseEvent(QMouseEvent*)
+[moveit_setup_assistant-1] #25   Object "/usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.15.3", at 0x7f2f51d83fc3, in 
+[moveit_setup_assistant-1] #24   Object "/usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.15.3", at 0x7f2f51d8239d, in 
+[moveit_setup_assistant-1] #23   Object "/usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.15.3", at 0x7f2f51d82115, in QAbstractButton::clicked(bool)
+[moveit_setup_assistant-1] #22   Object "/usr/lib/x86_64-linux-gnu/libQt5Core.so.5.15.3", at 0x7f2f511d47c7, in 
+[moveit_setup_assistant-1] #21   Object "/opt/ros/humble/lib/libmoveit_setup_framework.so", at 0x7f2f526035ef, in moveit_setup::LoadPathWidget::btnFileDialog()
+[moveit_setup_assistant-1] #20   Object "/usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.15.3", at 0x7f2f51de2a91, in QWidgetLineControl::internalSetText(QString const&, int, bool)
+[moveit_setup_assistant-1] #19   Object "/usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.15.3", at 0x7f2f51de27ce, in QWidgetLineControl::finishChange(int, bool, bool)
+[moveit_setup_assistant-1] #18   Object "/usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.15.3", at 0x7f2f51ddf0f8, in QWidgetLineControl::textChanged(QString const&)
+[moveit_setup_assistant-1] #17   Object "/usr/lib/x86_64-linux-gnu/libQt5Core.so.5.15.3", at 0x7f2f511d47c7, in 
+[moveit_setup_assistant-1] #16   Object "/usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.15.3", at 0x7f2f51dd7845, in QLineEdit::textChanged(QString const&)
+[moveit_setup_assistant-1] #15   Object "/usr/lib/x86_64-linux-gnu/libQt5Core.so.5.15.3", at 0x7f2f511d47c7, in 
+[moveit_setup_assistant-1] #14   Object "/opt/ros/humble/lib/libmoveit_setup_framework.so", at 0x7f2f5262c6c5, in moveit_setup::LoadPathWidget::pathChanged(QString const&)
+[moveit_setup_assistant-1] #13   Object "/usr/lib/x86_64-linux-gnu/libQt5Core.so.5.15.3", at 0x7f2f511d47c7, in 
+[moveit_setup_assistant-1] #12   Object "/opt/ros/humble/lib/libmoveit_setup_core_plugins.so", at 0x7f2f376ebf19, in moveit_setup::core::StartScreenWidget::onUrdfPathChanged(QString const&)
+[moveit_setup_assistant-1] #11   Object "/opt/ros/humble/lib/libmoveit_setup_core_plugins.so", at 0x7f2f376ea0a0, in moveit_setup::core::StartScreen::loadURDFFile(std::filesystem::__cxx11::path const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+[moveit_setup_assistant-1] #10   Object "/opt/ros/humble/lib/libmoveit_setup_framework.so", at 0x7f2f5260e4f4, in moveit_setup::URDFConfig::loadFromPath(std::filesystem::__cxx11::path const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+[moveit_setup_assistant-1] #9    Object "/opt/ros/humble/lib/libmoveit_setup_framework.so", at 0x7f2f5260e14f, in moveit_setup::URDFConfig::setPackageName()
+[moveit_setup_assistant-1] #8    Object "/opt/ros/humble/lib/libament_index_cpp.so", at 0x7f2f50edde42, in ament_index_cpp::get_package_share_directory(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+[moveit_setup_assistant-1] #7    Object "/opt/ros/humble/lib/libament_index_cpp.so", at 0x7f2f50edbb19, in 
+[moveit_setup_assistant-1] #6    Object "/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30", at 0x7f2f50d014d7, in __cxa_throw
+[moveit_setup_assistant-1] #5    Object "/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30", at 0x7f2f50d01276, in std::terminate()
+[moveit_setup_assistant-1] #4    Object "/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30", at 0x7f2f50d0120b, in 
+[moveit_setup_assistant-1] #3    Object "/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30", at 0x7f2f50cf5b9d, in 
+[moveit_setup_assistant-1] #2    Object "/usr/lib/x86_64-linux-gnu/libc.so.6", at 0x7f2f50a327f2, in abort
+[moveit_setup_assistant-1] #1    Object "/usr/lib/x86_64-linux-gnu/libc.so.6", at 0x7f2f50a4c475, in raise
+[moveit_setup_assistant-1] #0    Object "/usr/lib/x86_64-linux-gnu/libc.so.6", at 0x7f2f50aa09fc, in pthread_kill
+[moveit_setup_assistant-1] Aborted (Signal sent by tkill() 65991 0)
+[ERROR] [moveit_setup_assistant-1]: process has died [pid 65991, exit code -6, cmd '/opt/ros/humble/lib/moveit_setup_assistant/moveit_setup_assistant --ros-args'].

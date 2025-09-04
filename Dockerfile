@@ -1,5 +1,6 @@
 # CUDA 12.8.1 runtime + cuDNN + Ubuntu 22.04
-FROM nvidia/cuda:12.8.1-cudnn-runtime-ubuntu22.04
+# FROM nvidia/cuda:12.8.1-cudnn-runtime-ubuntu22.04
+FROM nvidia/cuda:12.8.1-cudnn-devel-ubuntu22.04
 
 ENV DEBIAN_FRONTEND=noninteractive
 ENV TZ=Asia/Shanghai
@@ -14,38 +15,6 @@ RUN apt-get update
 
 RUN apt install -y locales sudo software-properties-common curl neovim
 
-# 设置语言环境
-RUN locale-gen en_US.UTF-8 \
- && update-locale LANG=en_US.UTF-8 \
- && export LANG=en_US.UTF-8
-
-# --- 安装 ROS 2 Humble (Debian 包) 使用国内源加速 ---
-RUN mkdir -p /usr/share/keyrings \
- && curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key | gpg --dearmor -o /usr/share/keyrings/ros-archive-keyring.gpg \
- && echo "deb [signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://mirrors.tuna.tsinghua.edu.cn/ros2/ubuntu $(lsb_release -cs) main" \
-    > /etc/apt/sources.list.d/ros2.list \
- && apt-get update \
- && apt-get install -y --no-install-recommends \
-    ros-humble-desktop \
-    python3-colcon-common-extensions \
-    python3-argcomplete \
- && rm -rf /var/lib/apt/lists/*
-
-RUN sudo apt update \
-   && apt install -y ros-humble-moveit lsb-release gnupg git ros-humble-moveit-visual-tools
-
-RUN sudo curl https://packages.osrfoundation.org/gazebo.gpg --output /usr/share/keyrings/pkgs-osrf-archive-keyring.gpg \
-   && echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/pkgs-osrf-archive-keyring.gpg] \
-   http://packages.osrfoundation.org/gazebo/ubuntu-stable $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/gazebo-stable.list > /dev/null \
-   && sudo apt-get update \
-   && sudo apt-get -y install ignition-fortress ros-humble-ros-gz python-is-python3 python3-pip \
-    ros-humble-ros2-control ros-humble-ros2-controllers ros-humble-ign-ros2-control ros-humble-ign-ros2-control-demos python3-catkin-pkg \
-    libgl1-mesa-dri libgl1-mesa-glx libegl1-mesa
-
-
-# 初始化 rosdep
-RUN rosdep init || true
-RUN rosdep update || true
 
 # --- 安装 Miniconda 并创建 conda 环境 ---
 WORKDIR /opt
@@ -83,25 +52,6 @@ RUN conda run -n humble pip config set global.index-url https://mirrors.tuna.tsi
    && conda run -n humble pip install "fastapi[standard]" \
    && conda run -n humble pip install meshcat catkin_pkg empy==3.3.4 lark-parser matplotlib \
    && pip install yapf
-
-
-
-
-# # 切回 root shell
-SHELL ["/bin/bash", "-o", "pipefail", "-c"]
-
-# # --- ROS2 workspace & 复制 robot_tool 源码 ---
-# WORKDIR /home/jaka_ws
-# COPY . .
-
-# # WORKDIR /root/ros2_ws
-
-# # 安装 ROS package 依赖
-# RUN /bin/bash -lc "source /opt/ros/humble/setup.bash && rosdep install --from-paths src -i -y || true"
-
-# # build
-# RUN /bin/bash -lc "source /opt/ros/humble/setup.bash && colcon build --parallel-workers 1 --event-handlers console_direct+"
-
 # # --- 容器启动环境配置（自动 source ROS，激活 conda 环境） ---
 # 初始化 conda，但默认不激活 base
 RUN echo "# >>> conda initialize >>>" >> /root/.bashrc \
@@ -118,6 +68,65 @@ RUN echo "# >>> conda initialize >>>" >> /root/.bashrc \
  && echo "unset __conda_setup" >> /root/.bashrc \
  && echo "# <<< conda initialize <<<" >> /root/.bashrc \
  && echo "conda deactivate" >> /root/.bashrc
+RUN source /root/.bashrc
+
+
+
+
+# 设置语言环境
+RUN locale-gen en_US.UTF-8 \
+ && update-locale LANG=en_US.UTF-8 \
+ && export LANG=en_US.UTF-8
+
+# --- 安装 ROS 2 Humble (Debian 包) 使用国内源加速 ---
+RUN mkdir -p /usr/share/keyrings \
+ && curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key | gpg --dearmor -o /usr/share/keyrings/ros-archive-keyring.gpg \
+ && echo "deb [signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://mirrors.tuna.tsinghua.edu.cn/ros2/ubuntu $(lsb_release -cs) main" \
+    > /etc/apt/sources.list.d/ros2.list \
+ && apt-get update \
+ && apt-get install -y --no-install-recommends \
+    ros-humble-desktop \
+    python3-colcon-common-extensions \
+    python3-argcomplete \
+ && rm -rf /var/lib/apt/lists/*
+
+RUN sudo apt update \
+   && apt install -y ros-humble-moveit lsb-release gnupg git ros-humble-moveit-visual-tools
+
+RUN sudo curl https://packages.osrfoundation.org/gazebo.gpg --output /usr/share/keyrings/pkgs-osrf-archive-keyring.gpg \
+   && echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/pkgs-osrf-archive-keyring.gpg] \
+   http://packages.osrfoundation.org/gazebo/ubuntu-stable $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/gazebo-stable.list > /dev/null \
+   && sudo apt-get update \
+   && sudo apt-get -y install ignition-fortress ros-humble-ros-gz python-is-python3 python3-pip \
+    ros-humble-ros2-control ros-humble-ros2-controllers ros-humble-ign-ros2-control ros-humble-ign-ros2-control-demos python3-catkin-pkg \
+    libgl1-mesa-dri libgl1-mesa-glx libegl1-mesa mesa-utils ros-humble-pinocchio
+
+
+# 初始化 rosdep
+RUN rosdep init || true
+RUN rosdep update || true
+
+
+
+
+
+
+# # 切回 root shell
+# SHELL ["/bin/bash", "-o", "pipefail", "-c"]
+
+# # --- ROS2 workspace & 复制 robot_tool 源码 ---
+# WORKDIR /home/jaka_ws
+# COPY . .
+
+# # WORKDIR /root/ros2_ws
+
+# # 安装 ROS package 依赖
+# RUN /bin/bash -lc "source /opt/ros/humble/setup.bash && rosdep install --from-paths src -i -y || true"
+
+# # build
+# RUN /bin/bash -lc "source /opt/ros/humble/setup.bash && colcon build --parallel-workers 1 --event-handlers console_direct+"
+
+
 
 
 RUN echo "source /opt/ros/humble/setup.bash" >> /root/.bashrc \

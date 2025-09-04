@@ -38,8 +38,9 @@ RUN sudo curl https://packages.osrfoundation.org/gazebo.gpg --output /usr/share/
    && echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/pkgs-osrf-archive-keyring.gpg] \
    http://packages.osrfoundation.org/gazebo/ubuntu-stable $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/gazebo-stable.list > /dev/null \
    && sudo apt-get update \
-   && sudo apt-get -y install ignition-fortress ros-humble-ros-gz python-is-python3 python3-pip  ros-humble-ros2-control ros-humble-ros2-controllers ros-humble-ign-ros2-control ros-humble-ign-ros2-control-demos python3-catkin-pkg
-
+   && sudo apt-get -y install ignition-fortress ros-humble-ros-gz python-is-python3 python3-pip \
+    ros-humble-ros2-control ros-humble-ros2-controllers ros-humble-ign-ros2-control ros-humble-ign-ros2-control-demos python3-catkin-pkg \
+    libgl1-mesa-dri libgl1-mesa-glx libegl1-mesa
 
 
 # 初始化 rosdep
@@ -119,6 +120,7 @@ RUN echo "# >>> conda initialize >>>" >> /root/.bashrc \
  && echo "conda deactivate" >> /root/.bashrc
 
 
-RUN echo "source /opt/ros/humble/setup.bash" >> /root/.bashrc
+RUN echo "source /opt/ros/humble/setup.bash" >> /root/.bashrc \
+&& echo "export PATH=/usr/bin:/opt/ros/humble/bin:$PATH" >> /root/.bashrc
 
 CMD ["/bin/bash", "-l"]

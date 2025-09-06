@@ -1,1 +1,1 @@
-controller_joint_names: ['', 'b-j1', 'b-j2', 'b-j3', ]
+controller_joint_names: ['', 'b-j1', 'b-j2', 'b-j3', 'l-j1', 'r-j1', ]

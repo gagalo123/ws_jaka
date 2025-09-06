@@ -8,17 +8,17 @@
     name="base_link">
     <inertial>
       <origin
-        xyz="-0.0201415805291187 0.0500230273876207 -0.00221557030378681"
+        xyz="-0.0201415828038005 0.00221556792021169 0.0500230258420477"
         rpy="0 0 0" />
       <mass
-        value="6.86209526220681" />
+        value="6.86209515901701" />
       <inertia
-        ixx="0.27557036960768"
-        ixy="0.00743392438385733"
-        ixz="0.000246464894421617"
-        iyy="0.308475312332188"
-        iyz="-0.000540704721416503"
-        izz="0.116604332994802" />
+        ixx="0.275570365325153"
+        ixy="-0.000246465901288815"
+        ixz="0.00743392369500423"
+        iyy="0.116604331209899"
+        iyz="0.00054070674314701"
+        izz="0.308475309095619" />
     </inertial>
     <visual>
       <origin
@@ -45,19 +45,19 @@
     </collision>
   </link>
   <link
-    name="b-l1">
+    name="b1">
     <inertial>
       <origin
-        xyz="0.188027704122708 -0.0109031872351374 -0.00332452504895082"
+        xyz="0.188027704122708 -0.0109031872351374 -0.00332452504895085"
         rpy="0 0 0" />
       <mass
         value="3.30257766952345" />
       <inertia
         ixx="0.00989570457379286"
-        ixy="-6.36219474638752E-06"
-        ixz="3.51041289548419E-05"
+        ixy="-6.36219474638727E-06"
+        ixz="3.51041289548418E-05"
         iyy="0.0503821756135365"
-        iyz="3.73833691425185E-07"
+        iyz="3.73833691425161E-07"
         izz="0.0550369035736467" />
     </inertial>
     <visual>
@@ -66,7 +66,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://wheel_dual_arm_robot/meshes/b-l1.STL" />
+          filename="package://wheel_dual_arm_robot/meshes/b1.STL" />
       </geometry>
       <material
         name="">
@@ -80,7 +80,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://wheel_dual_arm_robot/meshes/b-l1.STL" />
+          filename="package://wheel_dual_arm_robot/meshes/b1.STL" />
       </geometry>
     </collision>
   </link>
@@ -93,29 +93,29 @@
     <parent
       link="base_link" />
     <child
-      link="b-l1" />
+      link="b1" />
     <axis
       xyz="0 0 -1" />
     <limit
-      lower="-3.1416"
-      upper="3.1416"
+      lower="-6.2832"
+      upper="6.2832"
       effort="0"
       velocity="0" />
   </joint>
   <link
-    name="b-l2">
+    name="b2">
     <inertial>
       <origin
-        xyz="0.236712922238934 0.00496419456824127 5.09644711322456E-07"
+        xyz="0.236712922238933 0.00496419456824126 5.09644711311167E-07"
         rpy="0 0 0" />
       <mass
         value="4.33563046644472" />
       <inertia
         ixx="0.0128816448157487"
-        ixy="0.00295524022331279"
-        ixz="8.51205640385731E-09"
+        ixy="0.0029552402233128"
+        ixz="8.51205640355921E-09"
         iyy="0.0475589361496227"
-        iyz="-4.98704408267107E-09"
+        iyz="-4.9870440824138E-09"
         izz="0.0559120043479514" />
     </inertial>
     <visual>
@@ -124,7 +124,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://wheel_dual_arm_robot/meshes/b-l2.STL" />
+          filename="package://wheel_dual_arm_robot/meshes/b2.STL" />
       </geometry>
       <material
         name="">
@@ -138,7 +138,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://wheel_dual_arm_robot/meshes/b-l2.STL" />
+          filename="package://wheel_dual_arm_robot/meshes/b2.STL" />
       </geometry>
     </collision>
   </link>
@@ -149,32 +149,32 @@
       xyz="0.35 0 0"
       rpy="0 0 0" />
     <parent
-      link="b-l1" />
+      link="b1" />
     <child
-      link="b-l2" />
+      link="b2" />
     <axis
       xyz="0 0 -1" />
     <limit
-      lower="-3.1416"
-      upper="3.1416"
+      lower="-6.2832"
+      upper="6.2832"
       effort="0"
       velocity="0" />
   </joint>
   <link
-    name="b-l3">
+    name="b3">
     <inertial>
       <origin
-        xyz="0.346657922816514 0.00663376861106405 0.000184783506477361"
+        xyz="0.34666 0.0066338 0.00018478"
         rpy="0 0 0" />
       <mass
-        value="5.27028256939189" />
+        value="5.2703" />
       <inertia
-        ixx="0.0307244057335929"
-        ixy="-0.000812015826494931"
-        ixz="-3.97322712465808E-05"
-        iyy="0.0563093617977367"
-        iyz="8.66097148199001E-06"
-        izz="0.0403075388576739" />
+        ixx="0.030724"
+        ixy="-0.00081202"
+        ixz="-3.9732E-05"
+        iyy="0.056309"
+        iyz="8.6606E-06"
+        izz="0.040308" />
     </inertial>
     <visual>
       <origin
@@ -182,12 +182,12 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://wheel_dual_arm_robot/meshes/b-l3.STL" />
+          filename="package://wheel_dual_arm_robot/meshes/b3.STL" />
       </geometry>
       <material
         name="">
         <color
-          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+          rgba="0.79216 0.81961 0.93333 1" />
       </material>
     </visual>
     <collision>
@@ -196,7 +196,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://wheel_dual_arm_robot/meshes/b-l3.STL" />
+          filename="package://wheel_dual_arm_robot/meshes/b3.STL" />
       </geometry>
     </collision>
   </link>
@@ -207,32 +207,32 @@
       xyz="0.35 0 0"
       rpy="0 0 0" />
     <parent
-      link="b-l2" />
+      link="b2" />
     <child
-      link="b-l3" />
+      link="b3" />
     <axis
       xyz="0 0 -1" />
     <limit
-      lower="-3.1416"
-      upper="3.1416"
+      lower="-6.2832"
+      upper="6.2832"
       effort="0"
       velocity="0" />
   </joint>
   <link
-    name="base_arm_link">
+    name="arm_base_link">
     <inertial>
       <origin
-        xyz="-1.84227633148737E-15 7.66216954968322E-14 1.91174448080922E-05"
+        xyz="-6.7654E-16 7.6585E-14 1.9117E-05"
         rpy="0 0 0" />
       <mass
-        value="1.88365700165481" />
+        value="1.8837" />
       <inertia
-        ixx="0.00336864771403572"
-        ixy="3.54413307826074E-06"
-        ixz="-3.41040500397664E-17"
-        iyy="0.00262584899105153"
-        iyz="6.24660731309671E-15"
-        izz="0.00326368725574852" />
+        ixx="0.0033686"
+        ixy="3.5441E-06"
+        ixz="-1.8863E-17"
+        iyy="0.0026258"
+        iyz="3.4975E-15"
+        izz="0.0032637" />
     </inertial>
     <visual>
       <origin
@@ -240,12 +240,12 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://wheel_dual_arm_robot/meshes/base_arm_link.STL" />
+          filename="package://wheel_dual_arm_robot/meshes/arm_base_link.STL" />
       </geometry>
       <material
         name="">
         <color
-          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+          rgba="0.79216 0.81961 0.93333 1" />
       </material>
     </visual>
     <collision>
@@ -254,21 +254,137 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://wheel_dual_arm_robot/meshes/base_arm_link.STL" />
+          filename="package://wheel_dual_arm_robot/meshes/arm_base_link.STL" />
       </geometry>
     </collision>
   </link>
   <joint
-    name="base_arm-j0"
+    name="body_to_arm"
     type="fixed">
     <origin
       xyz="0.454 0 0"
       rpy="1.5708 0 1.5708" />
     <parent
-      link="b-l3" />
+      link="b3" />
     <child
-      link="base_arm_link" />
+      link="arm_base_link" />
     <axis
       xyz="0 0 0" />
+  </joint>
+  <link
+    name="l1">
+    <inertial>
+      <origin
+        xyz="4.7935E-07 3.2897E-08 -0.043212"
+        rpy="0 0 0" />
+      <mass
+        value="0.53062" />
+      <inertia
+        ixx="0.0010889"
+        ixy="-2.4647E-09"
+        ixz="-2.6799E-09"
+        iyy="0.0013466"
+        iyz="-8.9774E-10"
+        izz="0.00075651" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wheel_dual_arm_robot/meshes/l1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wheel_dual_arm_robot/meshes/l1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l-j1"
+    type="revolute">
+    <origin
+      xyz="0 0.225 0"
+      rpy="-1.5708 1.5708 0" />
+    <parent
+      link="arm_base_link" />
+    <child
+      link="l1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-6.2832"
+      upper="6.2832"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="r1">
+    <inertial>
+      <origin
+        xyz="-4.7935E-07 -3.2897E-08 -0.043212"
+        rpy="0 0 0" />
+      <mass
+        value="0.53062" />
+      <inertia
+        ixx="0.0010889"
+        ixy="-2.4647E-09"
+        ixz="2.6799E-09"
+        iyy="0.0013466"
+        iyz="8.9774E-10"
+        izz="0.00075651" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wheel_dual_arm_robot/meshes/r1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://wheel_dual_arm_robot/meshes/r1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r-j1"
+    type="revolute">
+    <origin
+      xyz="0 -0.225 0"
+      rpy="1.5708 -1.5708 0" />
+    <parent
+      link="arm_base_link" />
+    <child
+      link="r1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-6.2832"
+      upper="6.2832"
+      effort="0"
+      velocity="0" />
   </joint>
 </robot>

@@ -99,7 +99,7 @@ RUN sudo curl https://packages.osrfoundation.org/gazebo.gpg --output /usr/share/
    && sudo apt-get update \
    && sudo apt-get -y install ignition-fortress ros-humble-ros-gz python-is-python3 python3-pip \
     ros-humble-ros2-control ros-humble-ros2-controllers ros-humble-ign-ros2-control ros-humble-ign-ros2-control-demos python3-catkin-pkg \
-    libgl1-mesa-dri libgl1-mesa-glx libegl1-mesa mesa-utils ros-humble-pinocchio
+    libgl1-mesa-dri libgl1-mesa-glx libegl1-mesa mesa-utils ros-humble-pinocchio ros-humble-joint-state-publisher-gui
 
 
 # 初始化 rosdep

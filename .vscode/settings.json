@@ -75,5 +75,16 @@
         "typeindex": "cpp",
         "typeinfo": "cpp",
         "variant": "cpp"
-    }
+    },
+    "github.copilot.chat.codeGeneration.useInstructionFiles": true,
+    "python.autoComplete.extraPaths": [
+        "/home/mofang/code/ws_jaka/install/py_test/lib/python3.10/site-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/mofang/code/ws_jaka/install/py_test/lib/python3.10/site-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ]
 }
